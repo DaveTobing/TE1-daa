@@ -29,9 +29,7 @@ public class ShellSort{
     public static void randomizedShellSort(int[] a) {
         int n = a.length; // we assume that n is a power of 2
         Random rand = new Random(); // random number generator (not shown)
-        int j = 1 ;
         for (int offset = n/2; offset > 0; offset /= 2) {
-            j++;
             for (int i = 0; i < n - offset; i += offset){ // compare-exchange up
                 compareRegions(a ,i ,i+offset , offset, rand);
             }
